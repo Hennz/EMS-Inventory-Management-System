@@ -17,6 +17,8 @@ You can also use any other Git client that supports bitbucket, or just the git c
 
 When using SourceTree, whenever you're working on something new, you should go to Checkout>Create New Branch. Name it whatever you want (though relevancy is nice), and after this any changes you make to the files will stay in this branch, so we don't accidentally break the master. Commit as often as you want, it will only affect the branch you want, and commits are a good way to know exactly when something went wrong. After whatever you're doing seems to be finished, merge it back to the master branch, and it will show up on the website. Anything you do in branches won't show up on the website, so it should only have working stuff at any given time.
 
+Also, you _do not_ have to edit any files in SourceTree; you can edit in any program you want. Just make sure you commit regularly!
+
 
 ### How do I view the current data in the MySQL  ? ###
 Well, I highly recommend using MySQL workbench.
