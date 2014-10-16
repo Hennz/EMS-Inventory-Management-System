@@ -1,6 +1,7 @@
 # README Frequently Asked Questions #
 
 Last edited : Wellesley Arreza
+
 Lehigh University Emergency Medical Services Inventory Management App
 
 ### How do I access the website? ###
