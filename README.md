@@ -13,7 +13,9 @@ Files are updated by sending commits to the repository; Azure does most of the m
 Right now there's just a test index.html file committed.
 
 I'd reccomend using SourceTree (http://sourcetreeapp.com/) to publish files to the repository.
-You can also use any other Git client that supports bitbucket, or just the git command line app
+You can also use any other Git client that supports bitbucket, or just the git command line app.
+
+When using SourceTree, whenever you're working on something new, you should go to Checkout>Create New Branch. Name it whatever you want (though relevancy is nice), and after this any changes you make to the files will stay in this branch, so we don't accidentally break the master. Commit as often as you want, it will only affect the branch you want, and commits are a good way to know exactly when something went wrong. After whatever you're doing seems to be finished, merge it back to the master branch, and it will show up on the website. Anything you do in branches won't show up on the website, so it should only have working stuff at any given time.
 
 
 ### How do I view the current data in the MySQL  ? ###
