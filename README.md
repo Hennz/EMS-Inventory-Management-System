@@ -1,6 +1,6 @@
 # README Frequently Asked Questions #
 
-Last edited : Wellesley Arreza
+Last edited : Chris Barry
 
 Lehigh University Emergency Medical Services Inventory Management App
 
@@ -8,12 +8,12 @@ Lehigh University Emergency Medical Services Inventory Management App
 Well, the link to the site is :  cseproj.azurewebsites.net
 
 ### How do I access the files on the server? ###
-I would recommend putty or FileZilla to manage files on our server.
 
 Files are updated by sending commits to the repository; Azure does most of the management.
 Right now there's just a test index.html file committed.
 
-Use SourceTree (http://sourcetreeapp.com/) to publish files to the repository
+I'd reccoment using SourceTree (http://sourcetreeapp.com/) to publish files to the repository.
+You can also use any other Git client that supports bitbucket, or just the git command line app
 
 
 ### How do I view the current data in the MySQL  ? ###
