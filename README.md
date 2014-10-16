@@ -38,9 +38,13 @@ ER Diagram with MySQL Workbench.
 https://www.youtube.com/watch?v=l-hNncIsjyQ
 
 The connection string is: 
+
 Database=cseprojAh1e4yJuo;
+
 Data Source=us-cdbr-azure-east2-d.cloudapp.net;
+
 User Id=bcd4c67af90e16;
+
 Password=a3e7744d
 
 Just follow that youtube video, and you can access our database!!
