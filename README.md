@@ -11,8 +11,11 @@ Well, the link to the site is :  cse216proj.azurewebsites.net
 I would recommend putty or FileZilla to manage files on our server.
 
 The connection details are :
+
 ftps://waws-prod-bn1-001.ftp.azurewebsites.windows.net
+
 username: cse216proj\cse216
+
 password: testpassword1
 
 
