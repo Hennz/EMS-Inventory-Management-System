@@ -5,7 +5,7 @@ Last edited : Wellesley Arreza
 Lehigh University Emergency Medical Services Inventory Management App
 
 ### How do I access the website? ###
-Well, the link to the site is :  cse216proj.azurewebsites.net
+Well, the link to the site is :  cseproj.azurewebsites.net
 
 ### How do I access the files on the server? ###
 I would recommend putty or FileZilla to manage files on our server.
