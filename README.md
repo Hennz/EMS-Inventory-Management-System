@@ -12,7 +12,7 @@ Well, the link to the site is :  cseproj.azurewebsites.net
 Files are updated by sending commits to the repository; Azure does most of the management.
 Right now there's just a test index.html file committed.
 
-I'd reccoment using SourceTree (http://sourcetreeapp.com/) to publish files to the repository.
+I'd reccomend using SourceTree (http://sourcetreeapp.com/) to publish files to the repository.
 You can also use any other Git client that supports bitbucket, or just the git command line app
 
 
