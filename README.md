@@ -10,13 +10,10 @@ Well, the link to the site is :  cseproj.azurewebsites.net
 ### How do I access the files on the server? ###
 I would recommend putty or FileZilla to manage files on our server.
 
-The connection details are :
+Files are updated by sending commits to the repository; Azure does most of the management.
+Right now there's just a test index.html file committed.
 
-ftps://waws-prod-bn1-001.ftp.azurewebsites.windows.net
-
-username: cse216proj\cse216
-
-password: testpassword1
+Use SourceTree (http://sourcetreeapp.com/) to publish files to the repository
 
 
 ### How do I view the current data in the MySQL  ? ###
