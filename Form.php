@@ -7,6 +7,8 @@ and open the template in the editor.
 <?php include 'InventoryDAO.php'; ?>
 <?php
 session_start();
+
+if (isset($_SESSION['items'])) {
 ?>
 <html>
     <head>
@@ -75,3 +77,15 @@ session_start();
         
     </body>
 </html>
+<?php
+}
+
+else{
+    
+    echo "Woops.";
+   
+}
+ unset($_SESSION['items']);
+ exit;
+
+?>
