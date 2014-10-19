@@ -27,9 +27,9 @@
     </head>
 
     <body>
-        
+
         <!-- ADD Navbar -->
-        
+
         <nav class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -65,29 +65,34 @@
                 </div>
             </div>
         </nav>
-        
+
         <!-- end Nav Bar -->
-        
-        
+
+
 
         <div class="container">
-            <form method="get" action='index.php' class="form-signin" role="form" >
-                <h2 class="form-signin-heading">Please sign in</h2>
+            
+            <!-- bootstrap column styling -->
+            <div class = "col-md-4 col-md-push-4"> 
+                
+                <form method="get" action='index.php' class="form-signin" role="form" >
+                    <h2 class="form-signin-heading">Please sign in</h2>
+                    
+                    <!-- Name=UserID -->
+                    <input type="text" name="UserID" class="form-control"   placeholder="Username" required autofocus>
 
-                <!-- Name=UserID -->
-                <input type="text" name="UserID" class="form-control"   placeholder="Username" required autofocus>
+                    <!-- Name=Password -->
+                    <input type="password" name="Password" class="form-control"  placeholder="Password" required>
 
-                <!-- Name=Password -->
-                <input type="password" name="Password" class="form-control"  placeholder="Password" required>
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
 
-
-                <label class="checkbox">
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-
-                <!-- Submit Button -->
-                <button name = 'login' class="btn btn-lg btn-primary btn-block"  type="submit">Sign in</button>
-            </form>
+                    <!-- Submit Button -->
+                    <button name = 'login' class="btn btn-lg btn-primary btn-block"  type="submit">Sign in</button>
+                </form>
+            </div><!-- bootstrap column styling div -->
+            
 
         </div> <!-- /container -->
 
