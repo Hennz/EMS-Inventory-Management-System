@@ -1,6 +1,6 @@
 # README Frequently Asked Questions #
 
-Last edited : Chris Barry
+Last edited : Jon Chang
 
 Lehigh University Emergency Medical Services Inventory Management App
 
