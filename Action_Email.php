@@ -34,15 +34,28 @@ include 'InventoryDAO.php';
       echo "Message could not be sent...";
    }*/
    
-   $to = "wra216@lehigh.edu";
-   $subject = "This is subject";
-   $message = "<b>This is HTML message.</b>";
-   $message .= "<h1>This is headline.</h1>";
-   $header = "From:wra216@lehigh.edu \r\n";
-   //$header = "Cc:wra216@lehigh.edu \r\n";
-  // $header .= "MIME-Version: 1.0\r\n";
-   $header .= "Content-type: text/html\r\n";
-   $retval = mail ($to,$subject,$message,$header);
+$subject = 'subject';
+$message = 'message';
+$to = 'wra216@lehigh.edu';
+$type = 'plain'; // or HTML
+$charset = 'utf-8';
+
+$mail     = 'no-reply@'.str_replace('www.', '', $_SERVER['SERVER_NAME']);
+$uniqid   = md5(uniqid(time()));
+$headers  = 'From: '.$mail."\n";
+$headers .= 'Reply-to: '.$mail."\n";
+$headers .= 'Return-Path: '.$mail."\n";
+$headers .= 'Message-ID: <'.$uniqid.'@'.$_SERVER['SERVER_NAME'].">\n";
+$headers .= 'MIME-Version: 1.0'."\n";
+$headers .= 'Date: '.gmdate('D, d M Y H:i:s', time())."\n";
+$headers .= 'X-Priority: 3'."\n";
+$headers .= 'X-MSMail-Priority: Normal'."\n";
+$headers .= 'Content-Type: multipart/mixed;boundary="----------'.$uniqid.'"'."\n\n";
+$headers .= '------------'.$uniqid."\n";
+$headers .= 'Content-type: text/'.$type.';charset='.$charset.''."\n";
+$headers .= 'Content-transfer-encoding: 7bit';
+
+   $retval = mail ($to,$subject,$message,$headers);
    if( $retval == true )
    {
       echo "Message sent successfully...";
