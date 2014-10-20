@@ -76,7 +76,7 @@ if (isset($_SESSION['items'])) {
         <input type="button" class="btn btn-primary" value="Checkout">
         </br>
         Email Jonathan Chang:
-        <form action="index.php" method="get" class="form-signin" role="form">
+        <form method="get" action='index.php' class="form-signin" role="form">
         <input type="submit" class="btn btn-primary" value="Email JChang" name="Email">
         </form>
     </body>
