@@ -33,6 +33,15 @@ include 'InventoryDAO.php';
    {
       echo "Message could not be sent...";
    }*/
+        
+
+ini_set("SMTP","cseproj.azurewebsites.net");
+
+
+ini_set("smtp_port","25");
+
+
+ini_set('sendmail_from', 'wra216@cseproj.azurewebsites.net');
    
 $subject = 'subject';
 $message = 'message';
