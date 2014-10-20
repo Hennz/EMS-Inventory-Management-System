@@ -27,6 +27,11 @@ class Request {
         else if (isset($this->request['display'])){
             return "Display";
         }
+        
+        else if (isset($this->request['Email'])){
+            return "Email";
+        }
+       
        
         
         else{
