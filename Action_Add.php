@@ -1,9 +1,4 @@
-<!--Wellesley Arreza
-wra216
-CSE 297 – Web Application Development – Spring 2014
-Homework Assignment 6 
-Task Manager
-Due Wednesday, March 26th-->
+
 
 <?php
 session_start();
