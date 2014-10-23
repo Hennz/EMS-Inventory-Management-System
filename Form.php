@@ -72,12 +72,14 @@ if (isset($_SESSION['items'])) {
 
 
             </table>
-            <div class ="container">
+            <div class="btn-group">
                 <input type="button" class="btn btn-primary" value="Checkin">
                 <input type="button" class ="btn btn-success" value ="Checkout">
             </div>
             </br>
-            Email Inventory Manager:
+            </br>
+            <h2>Email Inventory Manager:</h2>
+            <br>
             <form method="get" action='index.php' class="form-signin" role="form">
                 <input type="submit" class="btn btn-primary" value="Email Manager" name="Email">
             </form>
