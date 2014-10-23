@@ -42,10 +42,12 @@ if (isset($_SESSION['items'])) {
         
         
         <table class="table table-bordered">
+            <tr class="active">
             <th>Item</th>
             <th>Quantity</th>
             <th>Check</th>
             <th>Amount</th>
+            </tr>
        <?php   
                 if (isset($_SESSION['items'])) {
                     $items = $_SESSION['items'];               
