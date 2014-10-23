@@ -41,10 +41,11 @@ if (isset($_SESSION['items'])) {
         </div>
         
         
-        <table class="table">
+        <table class="table table-bordered">
             <th>Item</th>
             <th>Quantity</th>
             <th>Check</th>
+            <th>Amount</th>
        <?php   
                 if (isset($_SESSION['items'])) {
                     $items = $_SESSION['items'];               
@@ -60,6 +61,7 @@ if (isset($_SESSION['items'])) {
                     echo "<td>" . $item->title . "</td>";
                     echo "<td>" . $item->quantity . "</td>";
                     echo "<td>" . "<input type='checkbox' name$item->id'></td>";
+                    echo "<td>" . "<input type='text' name$item->id'></td>";
                     echo '</tr>';
                   
                 }
@@ -75,9 +77,9 @@ if (isset($_SESSION['items'])) {
         </table>
         <input type="button" class="btn btn-primary" value="Checkout">
         </br>
-        Email Jonathan Chang:
+        Email Inventory Manager:
         <form method="get" action='index.php' class="form-signin" role="form">
-        <input type="submit" class="btn btn-primary" value="Email JChang" name="Email">
+        <input type="submit" class="btn btn-primary" value="Email Manager" name="Email">
         </form>
     </body>
 </html>
