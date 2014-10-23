@@ -78,9 +78,8 @@ if (isset($_SESSION['items'])) {
             </div>
             </br>
             <h3>Email Inventory Manager:</h3>
-            <br>
             <form method="get" action='index.php' class="form-signin" role="form">
-                <input type="submit" class="btn btn-primary" value="Email Manager" name="Email">
+                <input type="submit" class="btn btn-warning" value="Email Manager" name="Email">
             </form>
         </body>
     </html>
