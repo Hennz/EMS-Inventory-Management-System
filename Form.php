@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <!--
+Jonathan Chang [prototype table using bootstrap] [styling of page and adding column and button]
+
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.ssss
