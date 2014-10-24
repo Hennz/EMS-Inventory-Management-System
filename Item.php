@@ -1,4 +1,8 @@
+<!--Created the class to model Items. -Wellesley Arreza
 
+
+
+-->
 
 
 <?php

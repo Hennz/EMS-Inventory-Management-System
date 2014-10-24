@@ -1,13 +1,13 @@
+<!--
+Created the class that handles database connections. - Wellesley Arreza
 
+
+-->
 
 
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 include 'Item.php';
 
 class InventoryDAO{

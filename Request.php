@@ -1,3 +1,5 @@
+<!-- Created the class to model requests -->
+
 <?php
 
 class Request {
@@ -34,8 +36,7 @@ class Request {
        
        
         
-        else{
-        }    return 'DisplayList'; 
+        
         }
     }
 

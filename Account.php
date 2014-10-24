@@ -1,3 +1,6 @@
+<!--
+Created the Account class. - Wellesley Arreza
+-->
 
 
 <?php
