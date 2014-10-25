@@ -4,6 +4,29 @@ Last edited : Jon Chang
 
 Lehigh University Emergency Medical Services Inventory Management App
 
+### Using Git Bash for version control ###
+Reference: http://gitref.org/basic/
+Download: http://git-scm.com/downloads
+Stackoverflow guide : http://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide
+
+There are really just half a dozen of commands you need to know.
+
+git init OR git clone
+git remote set-url <remote name> <url of remote name>
+git add <file to add>  and git commit OR git commit -a (To add + commit all)
+git push origin master
+
+Merging Branches
+http://www.gitguys.com/topics/merging-branches-without-a-conflict/
+git checkout master
+git merge <branch>
+
+
+Use git --help to get a list of meanings of all commands.
+
+~ Wes
+
+
 ### How do I access the website? ###
 Well, the link to the site is :  cseproj.azurewebsites.net
 
@@ -50,6 +73,7 @@ Password=a3e7744d
 
 Just follow that youtube video, and you can access our database!!
 
+~Wes
 
 ### Contact Information ###
 Just text me on GroupMe
