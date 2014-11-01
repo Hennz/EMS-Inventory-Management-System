@@ -45,7 +45,7 @@ class InventoryDAO{
             $rec = new Item($row[0], $row[1], $row[2], $row[3]);
             $lst[$i++] = $rec;
         }
-        
+         $con->close();
         return $lst;
     }
     
@@ -63,7 +63,7 @@ class InventoryDAO{
         }
           
           
-        
+         $con->close();
         return false;
     }
     
@@ -78,7 +78,7 @@ public function update($id, $quantity)
     for($i=0; $i<sizeof($id); $i++){
     //$q . "UPDATE item SET Quantity='$quantity[$i]' WHERE id='$id[$i]'; ";
     $con->query("UPDATE item SET Quantity='$quantity[$i]' WHERE ItemID='$id[$i]'; ");
-    
+    $con->close();
     }
     
     //return $result = $con->query($q);
