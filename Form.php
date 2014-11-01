@@ -25,13 +25,18 @@ if (isset($_SESSION['items'])) {
 
             <!-- Latest compiled and minified JavaScript -->
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+            <script src="./js/jquery-1.8.1.min.js"></script>
+            <script src="./js/jquery-ui-1.8.23.custom.min.js"></script>
+            
+         
 
 
 
         </head>
         <body>
-
+            
+            
+     
             <div class="header">
 
             </div>
@@ -41,13 +46,13 @@ if (isset($_SESSION['items'])) {
 
             </div>
 
-
+            <form method="get" action='index.php' class="form-signin" role="form">
             <table class="table table-bordered">
                 <tr class="active">
                     <th>Item</th>
                     <th>Quantity</th>
-                    <th>Check</th>
-                    <th>Amount</th>
+                    <th>Check Out Amount</th>
+                    <th>Final Inventory Amount</th>
                 </tr>
                 <?php
                 if (isset($_SESSION['items'])) {
@@ -58,31 +63,44 @@ if (isset($_SESSION['items'])) {
                 $i = 0;
                 $size = sizeof($items);
 
+                
+                /*
+                 * 
+                 * This for loop prints out the table.
+                 * My jquery code will dynamically calculate the final inventory count
+                 * based on what the user enters.
+                 * Then once the user clicks submit, the final calculations
+                 * will be sent in a query to our database.
+                 */
+                
+                
                 for ($i = 0; $i < $size; $i++) {
                     $item = $items[$i];
                     echo '<tr>';
                     echo "<td>" . $item->title . "</td>";
-                    echo "<td>" . $item->quantity . "</td>";
-                    echo "<td>" . "<input type='checkbox' name$item->id'></td>";
-                    echo "<td>" . "<input type='text' name$item->id'></td>";
+                    echo "<td class='currentVal'>" . $item->quantity . "</td>";
+                   
+                    echo "<td class='change'>" . "<input type='text' name='db$item->id'></td>";
+                    echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' name='$item->id' readonly></td>";
                     echo '</tr>';
                 }
                 ?>
 
 
 
-
+              
             </table>
-            <div class="btn-group">
-                <input type="button" class="btn btn-primary" value="Checkin">
-                <input type="button" class ="btn btn-success" value ="Checkout">
+                </br>
+                ***Please note if the final inventory account is insufficient, no updates will be posted for the item(s).***
+                </br>
+            <div class="btn-group">             
+                <input type="submit" class ="btn btn-success sub" value ="Checkout" name="display">
             </div>
-            </br>
-            <h3>Email Inventory Manager:</h3>
-            <form method="get" action='index.php' class="form-signin" role="form">
-                <input type="submit" class="btn btn-warning" value="Email Manager" name="Email">
             </form>
+            </br>
+           
         </body>
+         <script src="./js/script.js"></script>
     </html>
     <?php
 } else {

@@ -69,26 +69,22 @@ class InventoryDAO{
     
      
    
-public function update($title, $quantity)
+public function update($id, $quantity)
 {
     $con = $this->getDBConnection();
     //connect
-   
-    //insert task
-    $result = $con->query("INSERT INTO truck(Title,Quantity) 
-        VALUES('$title', $quantity);");
+
+    $q="";
+    for($i=0; $i<sizeof($id); $i++){
+    //$q . "UPDATE item SET Quantity='$quantity[$i]' WHERE id='$id[$i]'; ";
+    $con->query("UPDATE item SET Quantity='$quantity[$i]' WHERE ItemID='$id[$i]'; ");
+    
+    }
+    
+    //return $result = $con->query($q);
     
 }
-/*
-public function delete($id)
-{
-    $con = $this->getDBConnection();
-    $val=(int)$id;
-    $result = $con->query("DELETE FROM TASK "
-            . "WHERE ID=$id");
-    
-}
-*/
+
 
 }
 
