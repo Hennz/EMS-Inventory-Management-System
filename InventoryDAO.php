@@ -38,6 +38,7 @@ class InventoryDAO{
         $con = $this->getDBConnection();
         
         $result = $con->query("SELECT ItemID,Title,Quantity,Description FROM item ORDER BY ItemID");
+        $con->close();
         $i = 0;
         
         // loop and create new Objects. Store attributes in array of objects
@@ -45,7 +46,7 @@ class InventoryDAO{
             $rec = new Item($row[0], $row[1], $row[2], $row[3]);
             $lst[$i++] = $rec;
         }
-         $con->close();
+        
         return $lst;
     }
     
@@ -54,6 +55,7 @@ class InventoryDAO{
         $con = $this->getDBConnection();
          $result = $con->query("SELECT COUNT(UserID) FROM user where
              Username='$user' AND Password = '$password'");
+         $con->close();
          $value="0";
           while ($row = $result->fetch_row()) {
             $value=$row[0];
@@ -63,7 +65,7 @@ class InventoryDAO{
         }
           
           
-         $con->close();
+         
         return false;
     }
     
