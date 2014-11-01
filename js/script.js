@@ -26,7 +26,7 @@ $(":input").on("input", function(){
     var result=currentNum-change;
     
     
-    if((currentNum-change)>0)
+    if((currentNum-change)>=0)
     {
         final.val(''+(currentNum-change));
         final.css({'background-color':'transparent'});
