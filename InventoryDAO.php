@@ -78,9 +78,9 @@ public function update($id, $quantity)
     for($i=0; $i<sizeof($id); $i++){
     //$q . "UPDATE item SET Quantity='$quantity[$i]' WHERE id='$id[$i]'; ";
     $con->query("UPDATE item SET Quantity='$quantity[$i]' WHERE ItemID='$id[$i]'; ");
-    $con->close();
+   
     }
-    
+     $con->close();
     //return $result = $con->query($q);
     
 }
