@@ -69,8 +69,13 @@ $('.table').children().children().each(function() {
     else {
         console.log(" No skip");
         var q = $(this).children('.finalVal').children().val();
+        var d= $(this).children('.currentVal').children().val();
         if (q == 'Insufficient') {
             console.log(" In sufficient");
+        }
+        else if(q == d){
+            // skip this 
+            // no need to update.
         }
 
         else {
