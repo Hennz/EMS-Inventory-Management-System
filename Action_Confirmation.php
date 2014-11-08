@@ -19,8 +19,8 @@
     $i=0;
     while(empty($result)){
         
-        
-        if($i>5000){
+        $i++;
+        if($i>1000){
             break;
         }
         
