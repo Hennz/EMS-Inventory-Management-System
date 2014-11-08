@@ -22,7 +22,7 @@ class Action_Add implements Action {
         echo $quantity[2];
         echo $result=$dao->update($id, $quantity);
         
-        header("Location: Action_Confirmation.php");
+        header("Location: Action_Display.php");
         /*
         while($result==false){
             
