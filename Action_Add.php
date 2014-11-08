@@ -23,6 +23,7 @@ class Action_Add implements Action {
         echo $result=$dao->update($id, $quantity);
         
         header("Location: Action_Confirmation.php");
+        /*
         while($result==false){
             
             
@@ -33,7 +34,7 @@ class Action_Add implements Action {
             
             
         }
-        
+        */
         
         /*
         $class='Action_Confirmation.php';
