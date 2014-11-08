@@ -15,14 +15,16 @@ class Action_Add implements Action {
         
         
         
-        $dao = new InventoryDAO();
-        $id = $request->get("id"); 
-        $quantity = $request->get("quantity"); 
-        echo $id[1];
-        echo $quantity[2];
-        echo $result=$dao->update($id, $quantity);
+        //$dao = new InventoryDAO();
+        //$id = $request->get("id"); 
+      //  $quantity = $request->get("quantity"); 
+       // $result=$dao->update($id, $quantity);
         
-        header("Location: Action_Display.php");
+        
+        $_SESSION['id'] = $request->get("id");
+        $_SESSION['quantity'] = $request->get("quantity"); 
+        
+        header("Location: Action_Confirmation.php");
         /*
         while($result==false){
             
