@@ -22,6 +22,9 @@ class Action_Login implements Action {
            
         $_SESSION['items'] = $dao->getList();
         
+        // implement session accounts array
+        
+        
         header("Location: Form.php");  
            
         }

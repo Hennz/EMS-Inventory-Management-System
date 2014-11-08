@@ -10,7 +10,7 @@ class Connect extends PHPUnit_Framework_TestCase  {
     
     
     // Lets test invalid usernames and passwords.
-    $invalidUser="bigbooty";
+    $invalidUser="12345";
     $invalidPass="Jchang";
     
     

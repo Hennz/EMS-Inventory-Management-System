@@ -21,8 +21,26 @@ class Action_Add implements Action {
         echo $id[1];
         echo $quantity[2];
         echo $result=$dao->update($id, $quantity);
-       
-        header("Location: Action_Display.php");
+        
+        header("Location: Action_Confirmation.php");
+        while($result==false){
+            
+            
+            if($result){
+                header("Location: Action_Display.php");
+                break;
+            }
+            
+            
+        }
+        
+        
+        /*
+        $class='Action_Confirmation.php';
+        $confirm= new $class;
+        $confirm->execute($request); 
+        */
+                
     }
 
 }    
