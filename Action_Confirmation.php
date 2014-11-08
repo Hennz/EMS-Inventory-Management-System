@@ -26,7 +26,7 @@
         
     }
     
-     header("Location: Action_Display.php");    
+     //header("Location: Action_Display.php");    
     ?>
     
 </html>
