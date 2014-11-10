@@ -27,9 +27,9 @@ if (isset($_SESSION['items'])) {
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <script src="./js/jquery-1.8.1.min.js"></script>
             <script src="./js/jquery-ui-1.8.23.custom.min.js"></script>
-            <!--import stylesheets-->
-            <link rel="stylesheet" href="css/styles.css">
-            
+            <!--import stylesheets Jon Test-->
+            <link href="css/bootstrap.min.css" rel ="stylesheet">
+            <link href="css/styles.css" rel ="stylesheet">
          
 
 
