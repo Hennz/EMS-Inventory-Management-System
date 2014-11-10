@@ -1,4 +1,6 @@
 function add(display){
+    document.getElementByName('db1').value = parseFloat(document.getElementByName('db1').value) + 1;
+      document.getElementByName('1').value = parseFloat(document.getElementByName('1').value) + 1;
     alert(display);
     var displayString = "db" + display;
     alert(displayString);
