@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-By: Emile Bahou & Chris Vickery
+By: Emile Bahou & Christopher Vickery
 -->
 <html>
     <head>
