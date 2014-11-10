@@ -5,8 +5,6 @@ Jonathan Chang [prototype table using bootstrap] [styling of page and adding col
 
 -->
 <?php include 'InventoryDAO.php'; ?>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="fonts/glyphicons-halflings-regular.svg">
 <?php
 session_start();
 
@@ -29,6 +27,8 @@ if (isset($_SESSION['items'])) {
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <script src="./js/jquery-1.8.1.min.js"></script>
             <script src="./js/jquery-ui-1.8.23.custom.min.js"></script>
+            <!--import stylesheets-->
+            <link rel="stylesheet" href="css/styles.css">
             
          
 
