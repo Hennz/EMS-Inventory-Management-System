@@ -56,6 +56,7 @@ if (isset($_SESSION['items'])) {
                     <th>Check In Amount</th>
                     <th>Check Out Amount</th>
                     <th>Final Inventory Amount</th>
+                    <th>Edit Item</th>
                 </tr>
                 <?php
                 if (isset($_SESSION['items'])) {
@@ -88,6 +89,12 @@ if (isset($_SESSION['items'])) {
                     echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id.in)' class='btn btn-default'>+ </button>" . "<input type='text' value = '0' name='db$item->id.in' id='db$item->id.in' readonly>" . "<button type='button' onclick = 'sub($item->id.in)' class='btn btn-danger'>-</button>"."</td>"; 
                     echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id)' class='btn btn-default'>+ </button>" . "<input type='text' value = '0' name='db$item->id' id='db$item->id' readonly>" . "<button type='button' onclick = 'sub($item->id)' class='btn btn-danger'>-</button>"."</td>";
                     echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' name='$item->id' readonly></td>";
+                    echo "<td> <button type ='button' class= 'btn btn-default'> Edit Item</button> </td>";
+                    echo '</tr>';
+                    
+                    
+                    echo '<tr>';
+                    echo "<td> <button type ='button' class= 'btn btn-default'> Add Item</button> </td>";
                     echo '</tr>';
                 }
                 ?>
