@@ -80,7 +80,7 @@ if (isset($_SESSION['items'])) {
                     echo "<td>" . $item->title . "</td>";
                     echo "<td class='currentVal'>" . $item->quantity . "</td>";
                    
-                    echo "<td class='change'>" . "<input type='text' name='db$item->id'></td>";
+                    echo "<td class='change'>" . "<button type='button' id = 'plus' class='btn btn-primary btn-circle btn-lg'><i class='glyphicon glyphicon-plus'></i></button>" . "<input type='text' name='db$item->id'>" . "<button type='button' id = 'minus' class='btn btn-danger btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>"."</td>";
                     echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' name='$item->id' readonly></td>";
                     echo '</tr>';
                 }
