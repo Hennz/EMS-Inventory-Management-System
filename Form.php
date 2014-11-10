@@ -16,6 +16,13 @@ if (isset($_SESSION['items'])) {
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
             <title></title>
             <!-- Bootstrap core CSS -->
+            <!-- Latest compiled and minified JavaScript -->
+             <script src="./js/jquery-1.8.1.min.js"></script>
+            <script src="./js/jquery-ui-1.8.23.custom.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+            <!--import style sheets Jon Test-->
+            <link href="css/styles.css" rel ="stylesheet">
+            
             <link href="./bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
             <!-- Latest compiled and minified CSS -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -23,13 +30,6 @@ if (isset($_SESSION['items'])) {
             <!-- Optional theme -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
-            <!-- Latest compiled and minified JavaScript -->
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-            <script src="./js/jquery-1.8.1.min.js"></script>
-            <script src="./js/jquery-ui-1.8.23.custom.min.js"></script>
-            <!--import stylesheets Jon Test-->
-            <link href="css/bootstrap.min.css" rel ="stylesheet">
-            <link href="css/styles.css" rel ="stylesheet">
          
 
 
