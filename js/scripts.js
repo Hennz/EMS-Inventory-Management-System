@@ -1,3 +1,3 @@
 function add(display){
-    document.getElementById(display).value = parseFloat(document.getElementById(display).value) + 1;
+    document.getElementByName(display).value = parseFloat(document.getElementByName(display).value) + 1;
 }
