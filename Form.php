@@ -82,7 +82,7 @@ if (isset($_SESSION['items'])) {
                     echo "<td>" . $item->title . "</td>";
                     echo "<td class='currentVal'>" . $item->quantity . "</td>";
                    
-                    echo "<td class='change'>" . "<button type='button' id = 'plus' class='btn btn-primary btn-circle btn-lg'><i class='glyphicon glyphicon-plus'></i></button>" . "<input type='text' value = '0' name='db$item->id' readonly>" . "<button type='button' id = 'minus' class='btn btn-danger btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>"."</td>";
+                    echo "<td class='change'>" . "<button type='button' onclick = 'add('$item->quantity')' id = 'plus' class='btn btn-primary btn-circle btn-lg'><i class='glyphicon glyphicon-plus'></i></button>" . "<input type='text' value = '0' name='db$item->id' readonly>" . "<button type='button' id = 'minus' class='btn btn-danger btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>"."</td>";
                     echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' name='$item->id' readonly></td>";
                     echo '</tr>';
                 }
@@ -103,6 +103,7 @@ if (isset($_SESSION['items'])) {
            
         </body>
          <script src="./js/script.js"></script>
+         <script src="./js/scripts.js"></script>
     </html>
     <?php
 } else {
