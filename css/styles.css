@@ -1,8 +1,3 @@
-body {
-	/* background: #ffaf00; */
-	background-image: url("./images/ZenBG-1.png"), url("./images/ZenBG-2.png");
-	background-repeat: repeat-x, repeat;
-}
 #center {
 	background-color: black;
 	opacity: .6;
