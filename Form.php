@@ -53,6 +53,7 @@ if (isset($_SESSION['items'])) {
                 <tr class="active">
                     <th>Item</th>
                     <th>Quantity</th>
+                    <th>Check In Amount</th>
                     <th>Check Out Amount</th>
                     <th>Final Inventory Amount</th>
                 </tr>
@@ -83,7 +84,9 @@ if (isset($_SESSION['items'])) {
                     echo "<td class='currentVal'>" . $item->quantity . "</td>";
                    
                     //echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id)' id = 'plus' class='btn btn-primary btn-circle btn-lg'><i class='glyphicon glyphicon-plus'></i></button>" . "<input type='text' value = '0' name='db$item->id' id='db$item->id' readonly>" . "<button type='button' onclick = 'sub($item->id)' id = 'minus' class='btn btn-danger btn-circle btn-lg'><i class='glyphicon glyphicon-minus'></i></button>"."</td>";
-                     echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id)' class='btn btn-default'>+ </button>" . "<input type='text' value = '0' name='db$item->id' id='db$item->id' readonly>" . "<button type='button' onclick = 'sub($item->id)' class='btn btn-danger'>-</button>"."</td>";
+                    //top code works has the old button.. i added another buttom code to account for check in
+                    echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id + in)' class='btn btn-default'>+ </button>" . "<input type='text' value = '0' name='db$item->id + in' id='db$item->id + in' readonly>" . "<button type='button' onclick = 'sub($item->id + in)' class='btn btn-danger'>-</button>"."</td>"; 
+                    echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id)' class='btn btn-default'>+ </button>" . "<input type='text' value = '0' name='db$item->id' id='db$item->id' readonly>" . "<button type='button' onclick = 'sub($item->id)' class='btn btn-danger'>-</button>"."</td>";
                     echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' name='$item->id' readonly></td>";
                     echo '</tr>';
                 }
