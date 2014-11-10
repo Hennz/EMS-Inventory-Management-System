@@ -5,6 +5,7 @@ Jonathan Chang [prototype table using bootstrap] [styling of page and adding col
 
 -->
 <?php include 'InventoryDAO.php'; ?>
+<link rel="stylesheet" href="css/styles.css">
 <?php
 session_start();
 
