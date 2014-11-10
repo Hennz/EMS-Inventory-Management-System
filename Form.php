@@ -91,13 +91,12 @@ if (isset($_SESSION['items'])) {
                     echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' name='$item->id' readonly></td>";
                     echo "<td> <button type ='button' class= 'btn btn-default'> Edit Item</button> </td>";
                     echo '</tr>';
-                    
-                    
+                }
                     echo '<tr>';
                     echo "<td> <button type ='button' class= 'btn btn-default'> Add Item</button> </td>";
                     echo '</tr>';
-                }
                 ?>
+                
 
 
 
