@@ -1,14 +1,50 @@
-<!DOCTYPE html>
 <!--
 By: Emile Bahou & Christopher Vickery
+11/11/2014: Created basis of HTML page - Chris
 -->
+<!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="bootstrap-3.2.0-dist/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="PhpUnit/php-code-coverage/CodeCoverage/Report/HTML/Renderer/Template/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/createaccount.css" type="text/css">
+        
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
         <title></title>
     </head>
     <body>
-    
+        <div class = "container">
+            <form method="get" action='index.php' class="form-signin" role="form">
+                <h2 class="form-signin-heading">Make an account</h2>
+                <h3>First Name</h3> <!--NOTE TO SELF MAKE A CSS FILE FOR THIS CALLED createaccount.css, STYLE signUp CLASS-->
+                <input type="text" name="FirstName" class="form-control signUp" required>
+                <h3>Last Name</h3>
+                <input type="text" name="LastName" class="form-control signUp" required>
+                <h3>Address</h3>
+                <input type="text" name="Address" class="form-control signUp" required>
+                <h3>City</h3>
+                <input type="text" name="City" class="form-control signUp" required>
+                <h3>State</h3>
+                <select name="State" required>
+                    <option></option>
+                    <option>PA</option>
+                    <option>NJ</option>
+                </select>
+                <h3>Username</h3>
+                <input type="text" name="Username" class="form-control signUp" required>
+                <h3>Password</h3>
+                <input type="text" name="Password" class="form-control signUp" required>
+                <h3>Email</h3>
+                <input type="text" name="Email" class="form-control signUp" required>
+                <!-- Submit Button -->
+                <br><br>
+		        <button name='signup' class="btn btn-lg btn-primary btn-block" type="submit">Create account</button>
+            </form>
+        </div>
     </body>
 </html>
 
