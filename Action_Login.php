@@ -25,7 +25,7 @@ class Action_Login implements Action {
         // implement session accounts array
         
         
-        header("Location: Form.php");  
+        header("Location: Inventory.php");  
            
         }
         else{

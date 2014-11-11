@@ -37,9 +37,6 @@ class Request {
         else if (isset($this->request['add'])){
             return "Add";
         }
-       
-       
-        
         
         }
     }
