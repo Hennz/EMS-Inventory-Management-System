@@ -65,8 +65,8 @@ if (isset($_SESSION['items'])) {
                 ***Please note if the final inventory account is insufficient, no updates will be posted for the item(s).***
                 </br>
             <div class="btn-group">             
-                <input type="submit" class ="btn btn-success sub" value ="CheckIn" name="checkIn">
-				<input type="submit" class ="btn btn-success sub" value ="CheckOut" name="checkOut">
+                <input type="submit" class ="btn btn-success sub" value ="CheckIn" name="CheckIn">
+				<input type="submit" class ="btn btn-success sub" value ="CheckOut" name="CheckOut">
             </div>
 		
             </form>
