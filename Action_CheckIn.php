@@ -1,4 +1,4 @@
-<!--Created the check in LOGIN class. - Chris Barry-->
+<!--Created the check in class. - Chris Barry-->
 
 
 

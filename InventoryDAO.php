@@ -54,8 +54,8 @@ class InventoryDAO{
 		$lst = array();
 		$con = $this->getDBConnection();
 		
-		for($i = 0; $i<sizeof($itemList), $i++){
-			$row = $con->query("SELECT ItemID,Title,Quantity,Description FROM item WHERE id=$itemList[i];")
+		for($i = 0; $i<sizeof($itemList); $i++){
+			$row = $con->query("SELECT ItemID,Title,Quantity,Description FROM item WHERE id=$itemList[i];");
 			$rec = new Item($row[0], $row[1], $row[2], $row[3]);
 			$lst[i] = $rec;
 		}

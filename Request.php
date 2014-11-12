@@ -12,7 +12,6 @@ class Request {
     
     public function get($name) {
         if (array_key_exists($name, $this->request)) 
-                
                 return $this->request[$name];
         return '';
     }
@@ -36,6 +35,9 @@ class Request {
         
         else if (isset($this->request['add'])){
             return "Add";
+        }
+		else if (isset($this->request['CheckIn'])){
+            return "CheckIn";
         }
         
         }

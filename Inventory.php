@@ -56,7 +56,7 @@ if (isset($_SESSION['items'])) {
                     echo '<tr>';
                     echo "<td>" . $item->title . "</td>";
                     echo "<td class='currentVal'>" . $item->quantity . "</td>";
-                    echo "<td> <input type='checkbox' name='toModify' value='". $item->id . "'> Include item</button> </td>";
+                    echo "<td> <input type='checkbox' name='toModify[]' value='". $item->id . "'> Include item</button> </td>";
                     echo '</tr>';
                 }
                 ?>
@@ -65,8 +65,8 @@ if (isset($_SESSION['items'])) {
                 ***Please note if the final inventory account is insufficient, no updates will be posted for the item(s).***
                 </br>
             <div class="btn-group">             
-                <input type="submit" class ="btn btn-success sub" value ="CheckIn" name="CheckIn">
-				<input type="submit" class ="btn btn-success sub" value ="CheckOut" name="CheckOut">
+                <input type="submit" class ="btn btn-success sub" name="CheckIn">
+				<input type="submit" class ="btn btn-success sub" name="CheckOut">
             </div>
 		
             </form>
