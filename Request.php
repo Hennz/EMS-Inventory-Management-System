@@ -39,6 +39,9 @@ class Request {
 		else if (isset($this->request['CheckIn'])){
             return "CheckIn";
         }
+		else if (isset($this->request['CheckOut'])){
+            return "CheckOut";
+        }
         
         }
     }
