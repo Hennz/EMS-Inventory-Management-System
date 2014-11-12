@@ -83,7 +83,7 @@ if (isset($_SESSION['selectedItems'])) {
                     echo "<td class='currentVal'>" . $item->description . "</td>";
                     echo "<td>" . $item->quantity . "</td>";
                     echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id)' class='btn btn-default'>+ </button>" . "<input type='text' value = '0' name='db$item->id' id='db$item->id' readonly>" . "<button type='button' onclick = 'sub($item->id)' class='btn btn-danger'>-</button>"."</td>";
-                    echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' name='$item->id' readonly></td>";
+                    echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' id= '$item->id' name='$item->id' readonly></td>";
                     echo '</tr>';
                 }
                 ?>
