@@ -63,7 +63,7 @@ class InventoryDAO{
 
 		$j = 0;
 		while($row = $result->fetch_row()){
-			$rec = new Item($row[0], $row[1], $row[2], $row[3]);
+			$rec = new Item($row[0], $row[3], $row[2], $row[1]);
 			$lst[$j++] = $rec;
 		}
                 
