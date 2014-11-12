@@ -46,18 +46,25 @@ class InventoryDAO{
             $rec = new Item($row[0], $row[1], $row[2], $row[3]);
             $lst[$i++] = $rec;
         }
-        
         return $lst;
     }
 	
 	public function getSelectedItems($itemList){
 		$lst = array();
 		$con = $this->getDBConnection();
+
+		$rowIds = $itemList[0];
+		for($i = 1; $i < sizeof($itemList); $i++){
+			$rowIds .= ("," . $itemList[$i]);
+		}
 		
-		for($i = 0; $i<sizeof($itemList); $i++){
-			$row = $con->query("SELECT ItemID,Title,Quantity,Description FROM item WHERE id=$itemList[i];");
+		$result = $con->query("SELECT * FROM item WHERE ItemID IN ($rowIds);");
+		$con->close();
+
+		$j = 0;
+		while($row = $result->fetch_row()){
 			$rec = new Item($row[0], $row[1], $row[2], $row[3]);
-			$lst[i] = $rec;
+			$lst[$j++] = $rec;
 		}
 		return $lst;
 	}
