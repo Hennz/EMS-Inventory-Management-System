@@ -67,7 +67,6 @@ class InventoryDAO{
 			$lst[$j++] = $rec;
 		}
                 
-                $con->close();
 		return $lst;
 	}
     
