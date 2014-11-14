@@ -39,11 +39,14 @@ class Request {
         else if (isset($this->request['add2'])){
             return "Add2";
         }
-		else if (isset($this->request['CheckIn'])){
+        else if (isset($this->request['CheckIn'])){
             return "CheckIn";
         }
-		else if (isset($this->request['CheckOut'])){
+        else if (isset($this->request['CheckOut'])){
             return "CheckOut";
+        }
+        else if (isset($this->request['signup'])){
+            return "SignUp";
         }
         
         }
