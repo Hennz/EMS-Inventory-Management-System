@@ -20,7 +20,7 @@ class Action_Display implements Action {
         $dao = new InventoryDAO();     
         $_SESSION['items'] = $dao->getList();
         
-        header("Location: Form.php"); 
+        header("Location: Inventory.php"); 
     }
 
 }
