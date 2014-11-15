@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<!--
-Jonathan Chang
--->
 <?php include 'InventoryDAO.php'; ?>
 <?php
 session_start();
-
 if (isset($_SESSION['selectedItems'])) {
     ?>
     <html>
@@ -63,7 +59,7 @@ if (isset($_SESSION['selectedItems'])) {
 
 	<!-- end Nav Bar --> 
 
-            <form method="get" action='index.php' class="form-signin" role="form">
+          
             <table class="table table-bordered">
                 <tr class="active">
                     <th>Item</th>
@@ -78,29 +74,25 @@ if (isset($_SESSION['selectedItems'])) {
                     $items = $_SESSION['selectedItems'];
                 }
 
-
+                // once again please do not embed javascript into
+                // to the html. These are huge security flaws
+                // that some novice programmer can take advantage of.
+               
                 $i = 0;
-                $size = sizeof($items);
-
-                
-                /*
-                 * 
-                 * This for loop prints out the table.
-                 * My jquery code will dynamically calculate the final inventory count
-                 * based on what the user enters.
-                 * Then once the user clicks submit, the final calculations
-                 * will be sent in a query to our database.
-                 */
-                
-                
+                $size = sizeof($items);     
                 for ($i = 0; $i < $size; $i++) {
                     $item = $items[$i];
                     echo '<tr>';
                     echo "<td>" . $item->title . "</td>";
                     echo "<td class='currentVal'>" . $item->description . "</td>";
                     echo "<td>" . $item->quantity . "</td>";
-                    echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id)' class='btn btn-default'>+ </button>" . "<input type='text' value = '0' name='db$item->id' id='db$item->id' readonly>" . "<button type='button' onclick = 'sub($item->id)' class='btn btn-danger'>-</button>"."</td>";
-                    echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' id= '$item->id' name='$item->id' readonly></td>";
+                    echo "<td class='change'>" . "<button type='button' onclick = 'addNeg($item->id)' "
+                            . "class='btn btn-default'>+ </button>" . "<input type='text' value = '0' "
+                            . "name='db$item->id' id='db$item->id' readonly>" . 
+                            "<button type='button' onclick = 'subNeg($item->id)' "
+                            . "class='btn btn-danger'>-</button>"."</td>";
+                    echo "<td class = 'finalVal' >" . "<input type='text' "
+                            . "value='$item->quantity' id= '$item->id' name='$item->id' readonly></td>";
                     echo '</tr>';
                 }
                 ?>
@@ -114,13 +106,13 @@ if (isset($_SESSION['selectedItems'])) {
                 ***Please note if the final inventory account is insufficient, no updates will be posted for the item(s).***
                 </br>
             <div class="btn-group">             
-                <input type="submit" class ="btn btn-success sub" value ="Check-Out" name="inventory">
+                <input type="button" class ="btn btn-success sub" value ="Check-Out" name="inventory">
             </div>
-            </form>
+           
             </br>
            
         </body>
-         <script src="./js/script.js"></script>
+         <script src="./js/ajax.js"></script>
          <script src="./js/scripts.js"></script>
     </html>
     <?php

@@ -131,7 +131,7 @@ if (isset($_SESSION['items'])) {
             </br>
            
         </body>
-         <script src="./js/script.js"></script>
+         <script src="./js/ajax.js"></script>
          <script src="./js/scripts.js"></script>
     </html>
     <?php
