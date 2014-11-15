@@ -36,9 +36,6 @@ class Request {
         else if (isset($this->request['add'])){
             return "Add";
         }
-        else if (isset($this->request['add2'])){
-            return "Add2";
-        }
         else if (isset($this->request['CheckIn'])){
             return "CheckIn";
         }

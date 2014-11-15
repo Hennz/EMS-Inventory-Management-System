@@ -36,99 +36,101 @@ if (isset($_SESSION['selectedItems'])) {
         <body>
 
 
-     <!-- ADD Navbar -->
+            <!-- ADD Navbar -->
 
-	<nav class="navbar navbar-default navbar-static-top" role="navigation">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapseNavJon">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">EMS Inventory</a>
-			</div>
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapseNavJon">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">EMS Inventory</a>
+                    </div>
 
 
-			<div class="collapse navbar-collapse navbar-right" id="collapseNavJon">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="home.html">Home</a>
-					</li>
-					<li><a href="mailto:joc216@lehigh.edu">Contact</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+                    <div class="collapse navbar-collapse navbar-right" id="collapseNavJon">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="home.html">Home</a>
+                            </li>
+                            <li><a href="mailto:joc216@lehigh.edu">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-	<!-- end Nav Bar --> 
+            <!-- end Nav Bar --> 
 
-            <form method="get" action='index.php' class="form-signin" role="form">
+         <!--    <form method="get" action='index.php' class="form-signin" role="form">-->
                 <table class="table table-bordered">
-                    <tr class="active">
-                        <th>Item</th>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                        <th>Check-In Amount</th>
-                        <th>Final Amount</th>
-
-                    </tr>
-                    <?php
-                    if (isset($_SESSION['selectedItems'])) {
-                        $items = $_SESSION['selectedItems'];
-                    }
+                    <tbody>
 
 
-                    $i = 0;
-                    $size = sizeof($items);
+                        <tr class="active">
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Check-In Amount</th>
+                            <th>Final Amount</th>
+
+                        </tr>
 
 
-                    /*
-                     * 
-                     * This for loop prints out the table.
-                     * My jquery code will dynamically calculate the final inventory count
-                     * based on what the user enters.
-                     * Then once the user clicks submit, the final calculations
-                     * will be sent in a query to our database.
-                     */
-                    $idList = array();
-                    $quantityList = array();
+                        <?php
+                       
+                        if (isset($_SESSION['selectedItems'])) {
+                            $items = $_SESSION['selectedItems'];
+                        }
+                        $i = 0;
+                        $size = sizeof($items);
+                        $idList = array();
+                        $quantityList = array();
+                        for ($i = 0; $i < $size; $i++) {
+                            $item = $items[$i];
+                            echo '<tr>';
+                            echo "<td>" . $item->title . "</td>";
+                            echo "<td class='currentVal'>" . $item->description . "</td>";
+                            echo "<td>" . $item->quantity . "</td>";
 
-                    for ($i = 0; $i < $size; $i++) {
-                        $item = $items[$i];
-                        //array_push($idList, $item->id);
-                        //array_push($quantityList, $item->quantity);
-                        echo '<tr>';
-                        echo "<td>" . $item->title . "</td>";
-                        echo "<td class='currentVal'>" . $item->description . "</td>";
-                        echo "<td>" . $item->quantity . "</td>";
-                        echo "<td class='change'>" . "<button type='button' onclick = 'add($item->id)' class='btn btn-default'>+ </button>" . "<input type='text' value = '0' name='db$item->id' id='db$item->id' readonly>" . "<button type='button' onclick = 'sub($item->id)' class='btn btn-danger'>-</button>" . "</td>";
-                        echo "<td class = 'finalVal' >" . "<input type='text' value='$item->quantity' id = '$item->id' name='$item->id' readonly></td>";
-                        echo '</tr>';
-                    }
-                    ?>
 
+                     
+                            echo "<td class='change'>" . "<button type='button' "
+                            . "onclick = 'add($item->id)' class='btn btn-default'>+ </button>" .
+                            "<input type='text' value = '0' name='db$item->id' id='db$item->id' readonly>"
+                            . "<button type='button' onclick = "
+                            . "'sub($item->id)' class='btn btn-danger'>-</button>" . "</td>";
+
+                            echo "<td class = 'finalVal' name='$item->id' >" . "<input type='text' "
+                                    . "value='$item->quantity' id = '$item->id' name='$item->id' readonly></td>";
+                            echo '</tr>';
+                        }
+                        ?>
+
+
+                    </tbody>
                 </table>
-                
-                <?php 
-                array_push($idList, 1);
-                array_push($quantityList, '7');
-                
-                      $_SESSION['idList'] = $idList;
-                      $_SESSION['quantityList'] = $quantityList;  
+
+                <?php
+               // array_push($idList, 1);
+               // array_push($quantityList, '7');
+
+                $_SESSION['idList'] = $idList;
+                $_SESSION['quantityList'] = $quantityList;
                 ?>  
                 </br>
                 ***Please note if the final inventory account is insufficient, no updates will be posted for the item(s).***
                 </br>
                 <div class="btn-group">             
-                    <input type="submit" class ="btn btn-success sub" value ="Check-In" name="add2">
+                    <input type="button" class ="btn btn-success sub" value ="Check-In" name="add">
                 </div>
-            </form>
+          <!--  </form>-->
             </br>
 
         </body>
-        <script src="./js/script.js"></script>
+        <script src="./js/ajax.js"></script>
         <script src="./js/scripts.js"></script>
     </html>
     <?php

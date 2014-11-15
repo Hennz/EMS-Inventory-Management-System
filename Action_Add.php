@@ -1,50 +1,26 @@
-<!--Created the Action ADD class. - Wellesley Arreza-->
+
 
 <?php
 session_start();
 
 include 'Action.php';
 include 'InventoryDAO.php';
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 class Action_Add implements Action {
 
-    public function execute($request) {
-        
-        
-        $array=array();
-        
-        
-        
-        //$dao = new InventoryDAO();
-        //$id = $request->get("id"); 
-      //  $quantity = $request->get("quantity"); 
-       // $result=$dao->update($id, $quantity);
-        
-        
-        $_SESSION['id'] = $request->get("id");
-        $_SESSION['quantity'] = $request->get("quantity"); 
-        
-        header("Location: Action_Confirmation.php");
-        /*
-        while($result==false){
-            
-            
-            if($result){
-                header("Location: Action_Display.php");
-                break;
-            }
-            
-            
-        }
-        */
-        
-        /*
-        $class='Action_Confirmation.php';
-        $confirm= new $class;
-        $confirm->execute($request); 
-        */
-                
+    public function execute($request) {    
+        $dao = new InventoryDAO();            
+        $dao->update($request->get('id'),$request->get('quantity'));           
+        $_SESSION['items'] = $dao->getList();
+        header("Location: Inventory.php");   
     }
 
-}    
+}
 
+
+?>
