@@ -20,10 +20,7 @@ var i = -1; // this is to avoid the table heads. We skip in the loop.
 $(document).ready(function() {
 
     $('.sub').click(function() {
-        console.log("click");
-
         $('.table').children().children().each(function() {
-
             //children1=tbody
             //children2=tr
             var q = $(this).children('.finalVal').children().val();
@@ -31,7 +28,6 @@ $(document).ready(function() {
                 i++;
                 console.log("skip");
             }
-
             else {
                 console.log(" No skip");
 
@@ -43,22 +39,12 @@ $(document).ready(function() {
                 i++;
 
             }
-
-
-
-
         });
-
-        console.log("before ajax call");
-        postData();
-        console.log("end of ajax call");
-
         postData().done(function(result) {
             window.location.href = "home.html";
         });
 
     });
-
 
 });
 
@@ -68,7 +54,7 @@ function postData() {
     return $.ajax({
         url: 'index.php',
         type: 'post',
-        data: {'id': id, 'quantity': quantity, 'add': "add"},
+        data: {'id': id, 'quantity': quantity, 'update': "update"},
         success: function(data, status) {
 
             console.log("Successful ajax call data . Status : " + status);

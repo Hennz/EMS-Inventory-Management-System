@@ -33,6 +33,9 @@ class Request {
             return "Email";
         }
         
+        else if (isset($this->request['update'])){
+            return "Update";
+        }
         else if (isset($this->request['add'])){
             return "Add";
         }

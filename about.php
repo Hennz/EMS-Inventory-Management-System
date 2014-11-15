@@ -42,14 +42,13 @@ Created aboutPage.html - Chris Barry
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="login.html">EMS Inventory</a>
+				<a class="navbar-brand" href="#">EMS Inventory</a>
 			</div>
+
 
 			<div class="collapse navbar-collapse navbar-right" id="collapseNavJon">
 				<ul class="nav navbar-nav">
-					<li><a href="login.html">Home</a>
-					</li>
-					<li class="active"><a href="aboutPage.html">About</a>
+					<li class="active"><a href="home.html">Home</a>
 					</li>
 					<li><a href="mailto:joc216@lehigh.edu">Contact</a>
 					</li>
@@ -58,7 +57,7 @@ Created aboutPage.html - Chris Barry
 		</div>
 	</nav>
 
-	<!-- end Nav Bar -->
+	<!-- end Nav Bar --> 
 
 
 

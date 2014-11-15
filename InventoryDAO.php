@@ -82,10 +82,7 @@ class InventoryDAO{
             if(   ((int)$value) == 1   ){
           return true;
           }
-        }
-          
-          
-         
+        }         
         return false;
     }
     
@@ -94,20 +91,23 @@ class InventoryDAO{
 public function update($id, $quantity)
 {
     $con = $this->getDBConnection();
-    //connect
-
-    $q="";
     for($i=0; $i<sizeof($id); $i++){
-    //$q . "UPDATE item SET Quantity='$quantity[$i]' WHERE id='$id[$i]'; ";
-    $con->query("UPDATE item SET Quantity='$quantity[$i]' WHERE ItemID='$id[$i]'; ");
-   
+    $con->query("UPDATE item SET Quantity='$quantity[$i]' WHERE ItemID='$id[$i]'; ");  
     }
-     $con->close();
-    //return $result = $con->query($q);
+    $con->close();
     
 }
 
-
+public function updateCategory($title)
+{
+    $con = $this->getDBConnection();
+    
+    $con->query("INSERT INTO item(Title,Quantity,Description)"
+            . " VALUES('$title','0','No Description'); ");  
+    
+    $con->close();
+    
+}
 }
 
 ?>
