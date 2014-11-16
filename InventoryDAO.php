@@ -115,7 +115,8 @@ public function addAccount($lastname,$firstname,$address,$city,$password,$userna
     
     $con->query("set @u = (select max(UserID) from user) + 1;"
             . "insert into user (UserID,LastName,FirstName,Address,City,Password,Username,Email,State)"
-            . " values (@u,'$lastname','$firstname','$address','$city','$password','$username','$email','$state');"); 
+            . " values (@u,'$lastname','$firstname','$address','$city','$password','$username','$email','$state');");
+    $con->close();
 }
 
 }
