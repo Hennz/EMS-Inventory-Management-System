@@ -113,8 +113,7 @@ public function addAccount($lastname,$firstname,$address,$city,$password,$userna
 {
     $con = $this->getDBConnection();
     
-    //$con->query("set @u = (select max(UserID) from user) + 1; insert into user (UserID,LastName,FirstName,Address,City,Password,Username,Email,State) values (@u,'$lastname','$firstname','$address','$city','$password','$username','$email','$state');");
-    $con->query("insert into user (UserID,LastName,FirstName,Address,City,Password,Username,Email,State) values (72,'$lastname','$firstname','$address','$city','$password','$username','$email','$state');");
+    $con->query("set \@u = (select max(UserID) from user) + 1; insert into user (UserID,LastName,FirstName,Address,City,Password,Username,Email,State) values (\@u,'$lastname','$firstname','$address','$city','$password','$username','$email','$state');");
     $con->close();
 }
 
