@@ -2,6 +2,7 @@
 session_start();
 
 include 'Action.php';
+include 'InventoryDAO.php';
 
 class Action_SignUp implements Action {
     
