@@ -116,6 +116,7 @@ public function addAccount($lastname,$firstname,$address,$city,$password,$userna
     $result = $con->query("select MAX(UserID) from user;");
     $row = $result->fetch_row();
     $max = $row[0];
+    $max += 1;
     $con->query("insert into user (UserID,LastName,FirstName,Address,City,Password,Username,Email,State) values ($max,'$lastname','$firstname','$address','$city','$password','$username','$email','$state');");
     $con->close();
 }
