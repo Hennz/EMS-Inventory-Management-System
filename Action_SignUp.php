@@ -15,7 +15,7 @@ class Action_SignUp implements Action {
         $city = $request->get("City");
         $password = $request->get("Password");
         $username = $request->get("Username");
-        $email = $request->get("Email");
+        $email = $request->get("EmailAddress");
         $state = $request->get("State");
         
         $dao->addAccount($lastname,$firstname,$address,$city,$password,$username,$email,$state);
