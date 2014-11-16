@@ -108,6 +108,16 @@ public function updateCategory($title)
     $con->close();
     
 }
+
+public function addAccount($lastname,$firstname,$address,$city,$password,$username,$email,$state)
+{
+    $con = $this->getDBConnection();
+    
+    $con->query("set @u = (select max(UserID) from user) + 1;"
+            . "insert into user (UserID,LastName,FirstName,Address,City,Password,Username,Email,State)"
+            . " values (@u,'$lastname','$firstname','$address','$city','$password','$username','$email','$state');"); 
+}
+
 }
 
 ?>
