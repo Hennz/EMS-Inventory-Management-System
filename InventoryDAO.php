@@ -120,6 +120,7 @@ class InventoryDAO {
                 // this means that an account already exists.
                 $con->close();
                 return false;
+                
             } else {
                 $result2 = $con->query("insert into user (LastName,FirstName,"
                         . "Address,City,Password,Username,Email,State) values ("

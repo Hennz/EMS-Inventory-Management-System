@@ -1,8 +1,10 @@
 <?php
+
 include 'Action.php';
 include 'InventoryDAO.php';
-class CreateAccountTest extends PHPUnit_Framework_TestCase  {
-  
+
+class CreateAccountTest extends PHPUnit_Framework_TestCase {
+
     private $lastname = null;
     private $firstname = null;
     private $address = null;
@@ -12,83 +14,96 @@ class CreateAccountTest extends PHPUnit_Framework_TestCase  {
     private $email = null;
     private $state = null;
 
- 
-  
-  public function testInsufficientData(){
-      $lastname = 'Wheeler';
-        $firstname = 'Joey';
-        $address = '11 Asa Drive';
-        $city = 'bethlehem';
-        $password = 'abc';
-        $username = 'Jman';
-        $email = 'Jman@lehigh.edu';
-        $state = null;
+    public function testInsufficientData() {
+        $this->lastname = 'Wheeler';
+        $this->firstname = 'Joey';
+        $this->address = '11 Asa Drive';
+        $this->city = 'bethlehem';
+        $this->password = 'abc';
+        $this->username = 'Jman';
+        $this->email = 'Jman@lehigh.edu';
+        $this->state = null;
 
-    $dao= new InventoryDAO();
-    $this->assertNotNull($lastname);
-    $this->assertNotNull($firstname);
-    $this->assertNotNull($address);
-    $this->assertNotNull($city);
-    $this->assertNotNull($password);
-    $this->assertNotNull($username);
-    $this->assertNotNull($email);
-    $this->assertNotNull($state);
-    $this->assertTrue($dao->addAccount($lastname,$firstname,$address,$city,$password,$username,$email,$state) == false);   
-    //This should fail....
-    $con->close();
-  }
-  
-  public function testAlreadyExists(){
-      
-      
-        $lastname = 'Wheeler';
-        $firstname = 'Joey';
-        $address = '11 Asa Drive';
-        $city = 'bethlehem';
-        $password = 'abc';
-        $username = 'Jman';
-        $email = 'Jman@lehigh.edu';
-        $state = 'PA';
+        $dao = new InventoryDAO();
+        $this->assertNotNull($this->lastname);
+        $this->assertNotNull($this->firstname);
+        $this->assertNotNull($this->address);
+        $this->assertNotNull($this->city);
+        $this->assertNotNull($this->password);
+        $this->assertNotNull($this->username);
+        $this->assertNotNull($this->email);
+       
+        $this->assertTrue($dao->addAccount($this->lastname, 
+                $this->firstname, $this->address, 
+                $this->city, $this->password, 
+                $this->username, $this->email, $this->state) == false);
+    }
 
-    $dao= new InventoryDAO();
-    $this->assertNotNull($lastname);
-    $this->assertNotNull($firstname);
-    $this->assertNotNull($address);
-    $this->assertNotNull($city);
-    $this->assertNotNull($password);
-    $this->assertNotNull($username);
-    $this->assertNotNull($email);
-    $this->assertNotNull($state);
-    $this->assertTrue($dao->addAccount($lastname,$firstname,$address,$city,$password,$username,$email,$state) == true);
+    public function testAlreadyExists() {
+
+
+        $this->lastname = 'Wheeler';
+        $this->firstname = 'Joey';
+        $this->address = '11 Asa Drive';
+        $this->city = 'bethlehem';
+        $this->password = 'abc';
+        $this->username = 'Jman100';
+        $this->email = 'Jman@lehigh.edu';
+        $this->state = 'PA';
+
+        $dao = new InventoryDAO();
+        $this->assertNotNull($this->lastname);
+        $this->assertNotNull($this->firstname);
+        $this->assertNotNull($this->address);
+        $this->assertNotNull($this->city);
+        $this->assertNotNull($this->password);
+        $this->assertNotNull($this->username);
+        $this->assertNotNull($this->email);
+        $this->assertNotNull($this->state);
+        $this->assertTrue($dao->addAccount($this->lastname, 
+                $this->firstname, $this->address, $this->city, $this->password, 
+                $this->username, $this->email, $this->state) == true);
+        //This should fail....
+        $this->assertTrue($dao->addAccount($this->lastname, 
+                $this->firstname, $this->address, $this->city, $this->password, 
+                $this->username, $this->email, $this->state) == false);
+   
+         $dao->deleteAccount($this->username);
+        
+        
+    }
+
+    public function testCreateAccount() {
+        $this->lastname = 'Wheeler';
+        $this->firstname = 'Joey';
+        $this->address = '11 Asa Drive';
+        $this->city = 'bethlehem';
+        $this->password = 'abc';
+        $this->username = 'Jman50';
+        $this->email = 'Jman@lehigh.edu';
+        $this->state = 'PA';
+        
+        $dao = new InventoryDAO();
+        $this->assertNotNull($this->lastname);
+        $this->assertNotNull($this->firstname);
+        $this->assertNotNull($this->address);
+        $this->assertNotNull($this->city);
+        $this->assertNotNull($this->password);
+        $this->assertNotNull($this->username);
+        $this->assertNotNull($this->email);
+        $this->assertNotNull($this->state);
+        $this->assertTrue($dao->addAccount($this->lastname, 
+                $this->firstname, $this->address, $this->city, 
+                $this->password, $this->username, $this->email, 
+                $this->state) == true);
     
-    //This should fail....
-    $this->assertTrue($dao->addAccount($lastname,$firstname,$address,$city,$password,$username,$email,$state) == false);
-    $con->close();
-    
-    
-  } 
-    
-  public function testCreateAccount()
-  {
-      
-    $dao= new InventoryDAO();
-    $this->assertNotNull($lastname);
-    $this->assertNotNull($firstname);
-    $this->assertNotNull($address);
-    $this->assertNotNull($city);
-    $this->assertNotNull($password);
-    $this->assertNotNull($username);
-    $this->assertNotNull($email);
-    $this->assertNotNull($state);
-    $this->assertTrue($dao->addAccount($lastname,$firstname,$address,$city,$password,$username,$email,$state) == false);
-    $con->close();
-  }
-    
-    
-    
+        $dao->deleteAccount($this->username);
+        
+        
+        
+    }
+
 }
-
-
 ?>
 
 
