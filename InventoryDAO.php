@@ -89,11 +89,38 @@ class InventoryDAO {
     }
 
     public function update($id, $quantity) {
+        
+        // check if empty.
+        if(empty($id) || empty($quantity)){
+            return false;
+        }
+        
+        $idLength=sizeof($id);
+        $quantityLength=sizeof($quantity);
+        
+        // check if lengths are the same.
+        if($idLength!=$quantityLength){
+            return false;
+        }
+        
+        
+        // check if we recevied integers.
+        
         $con = $this->getDBConnection();
         for ($i = 0; $i < sizeof($id); $i++) {
+            
+            $conv1=ctype_digit($id[$i]);
+            $conv2=ctype_digit($quantity[$i]);
+        
+            if(!$conv1 || !$conv2){
+            return false;
+            }
+            
+            
             $con->query("UPDATE item SET Quantity='$quantity[$i]' WHERE ItemID='$id[$i]'; ");
         }
         $con->close();
+        return true;
     }
 
     public function updateCategory($title) {
