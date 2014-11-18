@@ -1,46 +1,44 @@
 <?php
 include 'Action.php';
 include 'InventoryDAO.php';
-class Connect extends PHPUnit_Framework_TestCase  {
+class LoginTest extends PHPUnit_Framework_TestCase  {
     
-  public function testConnectionIsValid()
-  {
-      
-    $dao= new InventoryDAO();
+    private $username=null;
+    private $password=null;
+    private $dao= null;
     
+    // We want to test for when the user does not enter enough information.
+    public function testInsufficientData(){
+        $username=null;
+        $password=null;
+        $dao = new InventoryDAO();
+        $this->assertTrue($dao->checkPasswd($username, $password) == false);       
+    }
     
-    // Lets test invalid usernames and passwords.
-    $invalidUser="12345";
-    $invalidPass="Jchang";
-    
-    
-    $this->assertNotNull($invalidUser);
-    $this->assertNotNull($invalidPass);
-    $this->assertTrue($dao->checkPasswd($invalidUser, $invalidPass) == false);
-    
-    $invalidUser="cb";
-    $invalidPass="Jynx";
-    
-    $this->assertNotNull($invalidUser);
-    $this->assertNotNull($invalidPass);
-    $this->assertTrue($dao->checkPasswd($invalidUser, $invalidPass) == false);
-    
-    $invalidUser="Goggles";
-    $invalidPass="DoubleJynx";
-    $this->assertNotNull($invalidUser);
-    $this->assertNotNull($invalidPass);
-    $this->assertTrue($dao->checkPasswd($invalidUser, $invalidPass) == false);
-    
-    
-    // lets test the valid user name and password
+        // We want to test for when the user enters valid account information.
+    public function testValidLogin(){
+    $dao = new InventoryDAO();
     $username="Bob";
     $password="password";
     $this->assertNotNull($username);
     $this->assertNotNull($password);
     $this->assertTrue($dao->checkPasswd($username, $password) !== false);
-  }
+    }
+    
+     // We want to test for when the user enters invalid account information.
+    public function testInvalidLogin(){
+    $dao = new InventoryDAO();
+    $username="12345";
+    $password="Jchang";
+    $this->assertNotNull($username);
+    $this->assertNotNull($password);
+    $this->assertTrue($dao->checkPasswd($username, $password) == false);
+   
     
     
+    
+    }
+       
     
 }
 
