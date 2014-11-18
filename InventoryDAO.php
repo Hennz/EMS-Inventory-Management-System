@@ -114,15 +114,15 @@ class InventoryDAO {
         } else {
             $con = $this->getDBConnection();
             // we are going to check if an account already exists.
-            $result = $con->query("select count(UserID) from user where UserID='$username';");
+            $result = $con->query("select count(UserID) from user where Username='$username';");
             $row = $result->fetch_row();
             if ($row[0] > 0) {
                 // this means that an account already exists.
                 $con->close();
                 return false;
             } else {
-                $result2 = $con->query("insert into user (UserID,LastName,FirstName,"
-                        . "Address,City,Password,Username,Email,State) values ($max,"
+                $result2 = $con->query("insert into user (LastName,FirstName,"
+                        . "Address,City,Password,Username,Email,State) values ("
                         . "'$lastname','$firstname','$address','$city','$password',"
                         . "'$username','$email','$state');");
                 $con->close();
@@ -134,7 +134,7 @@ class InventoryDAO {
 
     public function deleteAccount($username) {
         $con = $this->getDBConnection();
-        $result = $con->query("delete from user where UserID='$username';");
+        $result = $con->query("delete from user where Username='$username';");
         $con->close();
         return $result;
     }
