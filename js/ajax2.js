@@ -35,7 +35,7 @@ $(document).ready(function() {
     });
      
     startDownload().done(function(result) {
-           window.location.href = "Action_Download.php?id="+id+"&title="+title;
+           //window.location.href = "Action_Download.php?id="+id+"&title="+title;
         });
 
 });
@@ -47,7 +47,7 @@ function startDownload() {
         type: 'post',
         data: {'id': id, 'title': title, 'download': download},
         success: function(data, status) {
-
+            console.log(data);
             console.log("Successful ajax call data . Status : " + status);
             //window.location.href = "home.html";
         },
