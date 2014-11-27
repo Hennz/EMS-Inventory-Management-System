@@ -49,37 +49,7 @@ $(document).ready(function() {
 
     });
     
-    
-    $('#download').click(function(){
-        alert('download');
-        i=-1;
-        $('.table').children().children().each(function() {
-            
-            var q = $(this).children('.currentVal').val();
-            
-            if (i == -1) {
-                i++;
-            }
-            
-            else {
-
-                var strTitle = $(this).children().first();
-                title[i] = strTitle;
-                quantity[i] = q;
-                i++;
-
-            }
-        
-        
-        
-        
-    });
-    
-    startDownload().done(function(result) {
-            window.location.href = "home.html";
-        });
-
-});
+   
 
 
 function postData() {

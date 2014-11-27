@@ -14,7 +14,7 @@ $(document).ready(function() {
         i=-1;
         $('.table').children().children().each(function() {
             
-            var q = $(this).children('.currentVal').val();
+            var q = $(this).children('.currentVal').text();
             
             if (i == -1) {
                 i++;
@@ -22,11 +22,13 @@ $(document).ready(function() {
             
             else {
 
-                var strTitle = $(this).children().first().val();
+                var strTitle = $(this).children().first().text();
                 title[i] = strTitle;
                 quantity[i] = q;
                 console.log(q);
                 console.log(strTitle);
+               // alert(q);
+                //alert(strTitle);
                 i++;
 
             }
@@ -51,7 +53,7 @@ function startDownload() {
         success: function(data, status) {
             //console.log(data);
             console.log("Successful ajax call data . Status : " + status);
-            window.location.href = "DownloadConfirmation.php";
+            //window.location.href = "DownloadConfirmation.php";
         },
         error: function(xhr, desc, err) {
             console.log("Not Successful ajax call");
