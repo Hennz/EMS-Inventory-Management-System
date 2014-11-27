@@ -8,7 +8,7 @@ if (!empty($_SESSION['title'])) {
     $quantity = $_SESSION['quantity'];
     $filename = "excelreport.csv";
     $contents = "Item,Quantity\n";
-    header('Content-type: application/ms-excel');
+    header('Content-type: application/octet-stream');
     header('Content-Disposition: attachment; filename=' . $filename);
 
     $i = 0;
