@@ -61,8 +61,10 @@ if (isset($_SESSION['items'])) {
 	<!-- end Nav Bar --> 
             
             
-
-            <form method="get" action='index.php' class="form-signin" role="form">
+             <input type="button" id='download' class="download btn btn-danger" name="download" value ="Download Spreadsheet">
+            </br>
+            </br>
+             <form method="get" action='index.php' class="form-signin" role="form">
             <table class="table table-bordered">
                 <tr class="active">
                     <th>Item</th>
@@ -87,18 +89,17 @@ if (isset($_SESSION['items'])) {
                 ?>
             </table>
                 </br>
-                ***Please note if the final inventory account is insufficient, no updates will be posted for the item(s).***
-                </br>
+               
             <div class="btn-group">             
                 <input type="submit" class ="btn btn-success " name="CheckIn" value = "Check-In">
 		<input type="submit" class ="btn btn-success " name="CheckOut" value = "Check-Out">
-                </br>
+                
       
             </div>
 		
             </form>
             </br>
-            <input type="button" id='download' class="download" name="download" value ="Download Spreadsheet">
+           
             
         </body>
          <script src="./js/ajax.js"></script>
