@@ -1,4 +1,11 @@
-<?php
+
+<html>
+    
+    
+    <body>
+        Download will start..
+    </body>
+    <?php
 session_start();
 
 if (isset($_SESSION['title'])){
@@ -15,12 +22,8 @@ if (isset($_SESSION['title'])){
         echo $contents;
 }
 ?>
-<html>
     
     
-    <body>
-        Download will start..
-    </body>
 </html>
 <?php
 unset($_SESSION['title']);
