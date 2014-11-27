@@ -8,6 +8,19 @@ Jonathan Chang [prototype table using bootstrap] [styling of page and adding col
 <?php
 session_start();
 
+if (isset($_SESSION['title'])){
+        $title = $_SESSION['title'];
+        $quantity = $_SESSION['quantity'];
+        $filename = "EMSInventory.xls";
+        $contents = "";
+        
+        for($i=0; $i < 1; $i++){
+            $contents . $title[$i] . '\t' . $quantity[$i] . '\t' . '\n';
+        }
+        header('Content-type: application/ms-excel');
+        header('Content-Disposition: attachment; filename=' . $filename);
+        echo $contents;
+}
 if (isset($_SESSION['items'])) {
     ?>
     <html>
@@ -92,20 +105,29 @@ if (isset($_SESSION['items'])) {
             <div class="btn-group">             
                 <input type="submit" class ="btn btn-success " name="CheckIn" value = "Check-In">
 		<input type="submit" class ="btn btn-success " name="CheckOut" value = "Check-Out">
+                </br>
+      
             </div>
 		
             </form>
             </br>
-           
+            <input type="button" id='download' class="download" name="download" value ="Download Spreadsheet">
+            
         </body>
          <script src="./js/ajax.js"></script>
+         <script src="./js/ajax2.js"></script>
          <script src="./js/scripts.js"></script>
     </html>
     <?php
 } else {
-
     echo "Woops.";
 }
-unset($_SESSION['items']);
+
+
+
+
+unset($_SESSION['title']);
+unset($_SESSION['quantity']);
+//unset($_SESSION['items']);
 exit;
 ?>
