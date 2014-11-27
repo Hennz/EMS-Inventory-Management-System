@@ -25,6 +25,8 @@ $(document).ready(function() {
                 var strTitle = $(this).children().first().val();
                 title[i] = strTitle;
                 quantity[i] = q;
+                console.log(q);
+                console.log(strTitle);
                 i++;
 
             }
@@ -35,7 +37,7 @@ $(document).ready(function() {
     });
      
     startDownload().done(function(result) {
-           //window.location.href = "Action_Download.php?id="+id+"&title="+title;
+           window.location.href = "DownloadConfirmation.php";
         });
 
 });
@@ -45,11 +47,11 @@ function startDownload() {
     return $.ajax({
         url: 'index.php',
         type: 'post',
-        data: {'id': id, 'title': title, 'download': download},
+        data: {'quantity': quantity, 'title': title, 'download': download},
         success: function(data, status) {
-            console.log(data);
+            //console.log(data);
             console.log("Successful ajax call data . Status : " + status);
-            //window.location.href = "home.html";
+            window.location.href = "DownloadConfirmation.php";
         },
         error: function(xhr, desc, err) {
             console.log("Not Successful ajax call");
