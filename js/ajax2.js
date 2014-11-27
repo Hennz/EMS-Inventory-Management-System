@@ -35,7 +35,7 @@ $(document).ready(function() {
     });
      
     startDownload().done(function(result) {
-           //window.location.href = "Action_Download.php";
+           window.location.href = "Action_Download.php?id="+id+"&title="+title;
         });
 
 });
