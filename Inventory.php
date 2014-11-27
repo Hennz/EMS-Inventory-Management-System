@@ -8,19 +8,6 @@ Jonathan Chang [prototype table using bootstrap] [styling of page and adding col
 <?php
 session_start();
 
-if (isset($_SESSION['title'])){
-        $title = $_SESSION['title'];
-        $quantity = $_SESSION['quantity'];
-        $filename = "EMSInventory.xls";
-        $contents = "";
-        
-        for($i=0; $i < 1; $i++){
-            $contents . $title[$i] . '\t' . $quantity[$i] . '\t' . '\n';
-        }
-        header('Content-type: application/ms-excel');
-        header('Content-Disposition: attachment; filename=' . $filename);
-        echo $contents;
-}
 if (isset($_SESSION['items'])) {
     ?>
     <html>
@@ -125,9 +112,6 @@ if (isset($_SESSION['items'])) {
 
 
 
-
-unset($_SESSION['title']);
-unset($_SESSION['quantity']);
-//unset($_SESSION['items']);
+unset($_SESSION['items']);
 exit;
 ?>

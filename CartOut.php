@@ -121,5 +121,6 @@ if (isset($_SESSION['selectedItems'])) {
     echo "Woops.";
 }
 unset($_SESSION['selectedItems']);
+unset($_SESSION['items']);
 exit;
 ?>

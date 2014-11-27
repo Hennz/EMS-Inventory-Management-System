@@ -48,6 +48,9 @@ class Request {
         else if (isset($this->request['signup'])){
             return "SignUp";
         }
+        else if (isset($this->request['download'])){
+            return "Download";
+        }
         
         }
     }
