@@ -6,11 +6,11 @@
             <title></title>
             <!-- Bootstrap core CSS -->
             <!-- Latest compiled and minified JavaScript -->
-             <script src="./js/jquery-1.8.1.min.js"></script>
-            <script src="./js/jquery-ui-1.8.23.custom.min.js"></script>
+             <script src="../js/jquery-1.8.1.min.js"></script>
+            <script src="../js/jquery-ui-1.8.23.custom.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <!--import style sheets Jon Test-->
-            <link href="css/styles.css" rel ="stylesheet">
+            <link href="../css/styles.css" rel ="stylesheet">
             
             <link href="../bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet">
             <!-- Latest compiled and minified CSS -->
@@ -18,6 +18,8 @@
 
             <!-- Optional theme -->
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+             <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
         </head>
         
         <body>
@@ -64,11 +66,11 @@
            
            $localhost="C:/xampp/htdocs";
            $server="/cse-216-project/";
-            echo "<script src=".$server."/js/addCategory.js'></script>";
+            echo "<script src='".$server."/js/addCategory.js'></script>";
        }
        else if($_SERVER["DOCUMENT_ROOT"]=="D:\\home\\site\\wwwroot"){
            $server="";
-            echo "<script src=".$server."\\js\\addCategory.js'></script>";
+            echo "<script src='".$server."\\js\\addCategory.js'></script>";
        }
         
         
