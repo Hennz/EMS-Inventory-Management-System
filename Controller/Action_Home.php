@@ -4,6 +4,9 @@
 
 <?php
 session_start();
+$dir = dirname(__FILE__);
+echo "<p>Full path to this dir: " . $dir . "</p>";
+
 
 if ($_SERVER["DOCUMENT_ROOT"] == "C:/xampp/htdocs") {
 
