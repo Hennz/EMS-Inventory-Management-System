@@ -130,7 +130,7 @@ if (isset($_SESSION['selectedItems'])) {
        echo "<script src='".$server."/js/scripts.js'></script>";
        }
        else if($_SERVER["DOCUMENT_ROOT"]=="D:\\home\\site\\wwwroot"){
-           $server="";
+           $server="\\";
            echo "<script src='".$server."\\js\\ajax.js'></script>";
        echo "<script src='".$server."\\js\\scripts.js'></script>";
        }

@@ -67,7 +67,7 @@
             echo "<script src=".$server."/js/addCategory.js'></script>";
        }
        else if($_SERVER["DOCUMENT_ROOT"]=="D:\\home\\site\\wwwroot"){
-           $server="";
+           $server="\\";
             echo "<script src=".$server."\\js\\addCategory.js'></script>";
        }
         

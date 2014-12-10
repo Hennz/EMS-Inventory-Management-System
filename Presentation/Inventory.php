@@ -78,7 +78,7 @@ if (isset($_SESSION['items'])) {
            $server="/cse-216-project/";
        }
        else if($_SERVER["DOCUMENT_ROOT"]=="D:\\home\\site\\wwwroot"){
-           $server="";
+           $server="\\";
        }
             
             $String="<form method='get' action='" . $server . "index.php' class='form-signin' role='form'>";
