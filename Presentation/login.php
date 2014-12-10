@@ -77,7 +77,7 @@ Chris Barry- added custom css
                         $localhost = "C:/xampp/htdocs";
                         $server = "/cse-216-project/";
                     } else if ($_SERVER["DOCUMENT_ROOT"] == "D:\\home\\site\\wwwroot") {
-                        $server = "D:\\home\\site\\wwwroot\\";
+                        $server = "wwwroot\\";
                     }
 
 
