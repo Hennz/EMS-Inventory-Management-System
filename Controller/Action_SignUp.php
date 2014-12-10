@@ -35,7 +35,7 @@ class Action_SignUp implements Action {
                 $localhost = "C:/xampp/htdocs";
                 $server = "/cse-216-project/Presentation/";
             } else if ($_SERVER["DOCUMENT_ROOT"] == "D:\\home\\site\\wwwroot") {
-                $server = "\\Presentation\\";
+                $server = "Presentation\\";
             }
         
         
