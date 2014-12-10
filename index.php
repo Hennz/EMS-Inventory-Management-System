@@ -21,7 +21,7 @@ $class='Action_' . $request->getCommand();
 
 
 if($request->getCommand()=="Login"){
-    header("Location:".$server."login.php");  
+    header("Location: Presentation\\login.php");  
     
 }
 else{
