@@ -61,7 +61,7 @@
            $server="/cse-216-project/";
        }
        else if($_SERVER["DOCUMENT_ROOT"]=="D:\\home\\site\\wwwroot"){
-           $server="\\wwwroot\\";
+           $server="";
        }
        
        

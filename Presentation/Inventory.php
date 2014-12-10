@@ -78,7 +78,7 @@ if (isset($_SESSION['items'])) {
            $server="/cse-216-project/";
        }
        else if($_SERVER["DOCUMENT_ROOT"]=="D:\\home\\site\\wwwroot"){
-           $server="\\wwwroot\\";
+           $server="";
        }
             
             $String="<form method='get' action='" . $server . "index.php' class='form-signin' role='form'>";
@@ -139,7 +139,7 @@ if (isset($_SESSION['items'])) {
        echo "<script src='".$server."/js/scripts.js'></script>";
        }
        else if($_SERVER["DOCUMENT_ROOT"]=="D:\\home\\site\\wwwroot"){
-           $server="\\wwwroot\\";
+           $server="";
            echo "<script src='".$server."\\js\\ajax.js'></script>";
        echo "<script src='".$server."\\js\\ajax2.js'></script>";
        echo "<script src='".$server."\\js\\scripts.js'></script>";
