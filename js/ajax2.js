@@ -35,7 +35,7 @@ $(document).ready(function() {
         });
 
         startDownload().done(function(result) {
-            window.location.href = "\\wwwroot\\Presentation\\DownloadConfirmation.php";
+            window.location.href = "\\Presentation\\DownloadConfirmation.php";
         });
 
     });
@@ -43,7 +43,7 @@ $(document).ready(function() {
     function startDownload() {
 
         return $.ajax({
-            url: '\\wwwroot\\index.php',
+            url: '\\index.php',
             type: 'post',
             data: {'quantity': quantity, 'title': title, 'download': download},
             success: function(data, status) {

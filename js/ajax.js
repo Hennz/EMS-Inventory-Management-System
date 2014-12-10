@@ -45,7 +45,7 @@ $(document).ready(function() {
         });
         postData().done(function(result) {
           // window.location.href = "/cse-216-project/Presentation/home.php";
-          window.location.href = "\\wwwroot\\Presentation\\home.php";
+          window.location.href = "\\Presentation\\home.php";
         });
 
     });
@@ -56,7 +56,7 @@ $(document).ready(function() {
     function postData() {
         console.log("test");
         return $.ajax({
-            url: '\\wwwroot\\index.php',
+            url: '\\index.php',
             type: 'post',
             data: {'id': id, 'quantity': quantity, 'update': "update"},
             success: function(data, status) {
