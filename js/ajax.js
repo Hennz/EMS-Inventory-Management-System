@@ -44,7 +44,8 @@ $(document).ready(function() {
             }
         });
         postData().done(function(result) {
-            window.location.href = "home.html";
+          // window.location.href = "/cse-216-project/Presentation/home.php";
+          window.location.href = "\\wwwroot\\Presentation\\home.php";
         });
 
     });
@@ -53,15 +54,16 @@ $(document).ready(function() {
 
 
     function postData() {
-
+        console.log("test");
         return $.ajax({
-            url: 'index.php',
+            url: '\\wwwroot\\index.php',
             type: 'post',
             data: {'id': id, 'quantity': quantity, 'update': "update"},
             success: function(data, status) {
 
-                console.log("Successful ajax call data . Status : " + status);
-                window.location.href = "home.html";
+                //console.log("Successful ajax call data . Status : " + status);
+                console.log("Successful ajax call data . Status : " + data);
+                //window.location.href = "/cse-216-project/Presentation/home.php";
             },
             error: function(xhr, desc, err) {
                 console.log("Not Successful ajax call");
@@ -71,24 +73,7 @@ $(document).ready(function() {
 
     }
 
-    function startDownload() {
-
-        return $.ajax({
-            url: 'index.php',
-            type: 'post',
-            data: {'id': id, 'title': title, 'download': download},
-            success: function(data, status) {
-
-                console.log("Successful ajax call data . Status : " + status);
-                window.location.href = "home.html";
-            },
-            error: function(xhr, desc, err) {
-                console.log("Not Successful ajax call");
-            }
-
-        });
-
-    }
+   
 
 
 

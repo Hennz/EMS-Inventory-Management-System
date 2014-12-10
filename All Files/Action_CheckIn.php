@@ -12,11 +12,19 @@ include 'InventoryDAO.php';
 class Action_CheckIn implements Action {
 
     public function execute($request) {
-        $dao = new InventoryDAO();      
+        $dao = new InventoryDAO();
+        
+        // create objects
+        
+        // pass in array
         $_SESSION['selectedItems'] = $dao->getSelectedItems($request->get("toModify"));
+        
+        
         header("Location: CartIn.php");  
 
     }
+    
+    
 
 }
 

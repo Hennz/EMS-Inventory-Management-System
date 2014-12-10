@@ -1,0 +1,75 @@
+<!--
+By: Emile Bahou & Christopher Vickery
+11/11/2014: Created basis of HTML page - Chris
+11/13/2014: Added more states
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap.css" type="text/css"/>
+        <link rel="stylesheet" href="PhpUnit/php-code-coverage/CodeCoverage/Report/HTML/Renderer/Template/css/bootstrap.min.css" type="text/css">
+        <!--<link rel="stylesheet" href="css/createaccount.css" type="text/css">-->
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+        <title></title>
+    </head>
+    <body>
+        <div class = "container">
+            
+            <?php
+            $server = "";
+            if ($_SERVER["DOCUMENT_ROOT"] == "C:/xampp/htdocs") {
+
+                $localhost = "C:/xampp/htdocs";
+                $server = "/cse-216-project/";
+            } else if ($_SERVER["DOCUMENT_ROOT"] == "D:\\home\\site\\wwwroot") {
+                $server = "\\wwwroot\\";
+            }
+
+
+
+            $String = "<form method='get' action='" . $server . "index.php' class='form-signin' role='form'>";
+            echo $String;
+            ?>
+
+
+                <h2 class="form-signin-heading">Make an account</h2>
+                <h3>First Name</h3>
+                <input type="text" name="FirstName" class="form-control" required>
+                <h3>Last Name</h3>
+                <input type="text" name="LastName" class="form-control" required>
+                <h3>Address</h3>
+                <input type="text" name="Address" class="form-control" required>
+                <h3>City</h3>
+                <input type="text" name="City" class="form-control" required>
+                <h3>State</h3>
+                <select name="State" required>
+                    <option></option>
+                    <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+                    <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
+                    <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                    <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                    <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
+                    <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
+                    <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
+                    <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                    <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+                    <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+                </select>
+                <h3>Username</h3>
+                <input type="text" name="Username" class="form-control" required>
+                <h3>Password</h3>
+                <input type="password" name="Password" class="form-control" required>
+                <h3>Email</h3>
+                <input type="text" name="EmailAddress" class="form-control" required>
+                <br><br>
+                <button name='signup' class="btn btn-lg btn-primary btn-block" type="submit">Create account</button>
+            </form>
+        </div>
+    </body>
+</html>
+

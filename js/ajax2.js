@@ -35,7 +35,7 @@ $(document).ready(function() {
         });
 
         startDownload().done(function(result) {
-            window.location.href = "DownloadConfirmation.php";
+            window.location.href = "\\wwwroot\\Presentation\\DownloadConfirmation.php";
         });
 
     });
@@ -43,13 +43,13 @@ $(document).ready(function() {
     function startDownload() {
 
         return $.ajax({
-            url: 'index.php',
+            url: '\\wwwroot\\index.php',
             type: 'post',
             data: {'quantity': quantity, 'title': title, 'download': download},
             success: function(data, status) {
                 //console.log(data);
                 console.log("Successful ajax call data . Status : " + data);
-                //window.location.href = "DownloadConfirmation.php";
+                window.location.href = "DownloadConfirmation.php";
             },
             error: function(xhr, desc, err) {
                 console.log("Not Successful ajax call");

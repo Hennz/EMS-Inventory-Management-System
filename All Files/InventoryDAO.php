@@ -32,8 +32,9 @@ class InventoryDAO {
         return $_mysqli;
     }
 
+    
     public function getList() {
-        $lst = array();
+        $lst = array(); // array of new items
         $con = $this->getDBConnection();
 
         $result = $con->query("SELECT ItemID,Title,Quantity,Description FROM item ORDER BY ItemID");
@@ -42,11 +43,13 @@ class InventoryDAO {
 
         // loop and create new Objects. Store attributes in array of objects
         while ($row = $result->fetch_row()) {
+            // create new item object.
             $rec = new Item($row[0], $row[1], $row[2], $row[3]);
             $lst[$i++] = $rec;
         }
         return $lst;
     }
+    
 
     public function getSelectedItems($itemList) {
         $lst = array();
@@ -62,10 +65,12 @@ class InventoryDAO {
 
         $j = 0;
         while ($row = $result->fetch_row()) {
+            // new item
             $rec = new Item($row[0], $row[3], $row[2], $row[1]);
             $lst[$j++] = $rec;
         }
 
+        // return array of items.
         return $lst;
     }
 
@@ -88,6 +93,8 @@ class InventoryDAO {
         return false;
     }
 
+    
+    
     public function update($id, $quantity) {
         
         // check if empty.
@@ -107,6 +114,8 @@ class InventoryDAO {
         // check if we recevied integers.
         
         $con = $this->getDBConnection();
+        
+        
         for ($i = 0; $i < sizeof($id); $i++) {
             
             $conv1=ctype_digit($id[$i]);
@@ -123,6 +132,9 @@ class InventoryDAO {
         return true;
     }
 
+    
+    
+    
     public function updateCategory($title) {
         $con = $this->getDBConnection();
 
@@ -132,40 +144,7 @@ class InventoryDAO {
         $con->close();
     }
 
-    public function addAccount($lastname, $firstname, $address, $city, $password, $username, $email, $state) {
-        if (empty($lastname) || empty($firstname) || empty($address) ||
-                empty($city) || empty($password) || empty($username) ||
-                empty($email) || empty($state)) {
-
-            return false;
-        } else {
-            $con = $this->getDBConnection();
-            // we are going to check if an account already exists.
-            $result = $con->query("select count(UserID) from user where Username='$username';");
-            $row = $result->fetch_row();
-            if ($row[0] > 0) {
-                // this means that an account already exists.
-                $con->close();
-                return false;
-                
-            } else {
-                $result2 = $con->query("insert into user (LastName,FirstName,"
-                        . "Address,City,Password,Username,Email,State) values ("
-                        . "'$lastname','$firstname','$address','$city','$password',"
-                        . "'$username','$email','$state');");
-                $con->close();
-
-                return $result2;
-            }
-        }
-    }
-
-    public function deleteAccount($username) {
-        $con = $this->getDBConnection();
-        $result = $con->query("delete from user where Username='$username';");
-        $con->close();
-        return $result;
-    }
+   
 
 }
 ?>

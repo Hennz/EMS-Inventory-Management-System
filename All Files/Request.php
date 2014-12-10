@@ -21,8 +21,8 @@ class Request {
     }
     
     public function getCommand() {
-        if (isset($this->request['Home'])){
-            return 'Home';
+        if (isset($this->request['login'])){
+            return 'Login';
         }
         
         else if (isset($this->request['display'])){

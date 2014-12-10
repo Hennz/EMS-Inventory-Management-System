@@ -2,13 +2,13 @@
 session_start();
 
 include 'Action.php';
-include 'InventoryDAO.php';
+include 'AccountDAO.php';
 
 class Action_SignUp implements Action {
     
     public function execute($request) {
         
-        $dao = new InventoryDAO();
+        $dao = new AccountDAO();
         
         $lastname = $request->get("LastName");
         $firstname = $request->get("FirstName");
