@@ -1,4 +1,4 @@
-# README Frequently Asked Questions #
+# README / Frequently Asked Questions #
 
 Website link: http://cseproj.azurewebsites.net/
 
