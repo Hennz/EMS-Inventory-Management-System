@@ -1,5 +1,9 @@
 # README Frequently Asked Questions #
+
+Website link: http://cseproj.azurewebsites.net/
+
 Original Bitbucket link: https://bitbucket.org/CB_27/cse-216-project-team-1-a
+
 Lehigh University Emergency Medical Services Inventory Management App
 
 ### Using Git Bash for version control ###
